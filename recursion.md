@@ -39,7 +39,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 5. We will add the functionality for the button click in the code-behind.  Double-click the button to generate the event handler.
 
-	```
+	```csharp
 	private void btnCheck_Click(object sender, EventArgs e)
     {
 
@@ -50,13 +50,13 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 	Let's start by getting the value entered.  If you need a hint, check the [Variables](variables.md) walkthrough.  This code goes inside the button click event handler.
 
-	```
+	```csharp
 	String text = txtString.Text; 
 	```
 	
 7. We will leave the button click event handler alone for a while.  We have to create a new method to allow the recursion to work.  This is done because the basis of recursion relies on calling the same method multiple times.  If we don't create a method, we have nothing to repeat!  For now, just create a blank method (outside of the event handler) and name it something that describes the function it has, checking for a palindrome.  For more information on methods, please see the [Methods](methods.md) walkthrough.
 
-	```
+	```csharp
 	private void isPalindrome(String text)
     {
 
@@ -73,7 +73,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 	
 	Let's check for these base cases.  For more information about if statements, please read the [If Statements and For Loops](if-statements-and-for-loops.md) walkthrough.
 
-	```
+	```csharp
 	if (text.Length == 0 || text.Length == 1)
 	{
 		MessageBox.Show ("Yes, " + txtString.Text + " is a palindrome!");
@@ -86,7 +86,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 	Let's check if the first and last characters match.  We don't care about the rest of the string for now.  The key to solving many seemingly complex issues is to take things one step at a time.  This code goes below the code in the previous step.
 	
-	```
+	```csharp
 	else if (text[0].Equals(text[text.Length – 1]))
 	{
 		// recursive step
@@ -103,7 +103,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 10.	Here comes the recursive step.  What do we do if the first and last letters match?  We have to compare the rest of the string, right?  Don't panic!  This is not as difficult as it sounds.  We already have all of the logic implemented for checking if a string is a palindrome.  We just need to reuse that logic.  We've already confirmed that the first and last letters match.  We can call our method again using the part of the string we haven't checked yet.  Instead of using the full string that was entered, we'll use everything except the first and last characters.  Add this code where we wrote the comment `// recursive step`.
 
-	```
+	```csharp
 	isPalindrome(text.Substring(1, text.Length – 2));
 	```
  
@@ -111,13 +111,13 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 11.	The last thing to do is to call the method isPalindrome in the button click event handler.  This gets it all started!  Provide the full text that was entered.
 	
-	```
+	```csharp
 	isPalindrome(txtString.Text);
 	```
 
 12. For your reference, here is the full code.
 
-	```
+	```csharp
 	private void btnCheck_Click(object sender, EventArgs e)
     {
         isPalindrome(txtString.Text);

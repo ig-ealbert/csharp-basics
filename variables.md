@@ -47,7 +47,7 @@ The steps below will create a basic Windows Forms application.  It will multiply
 
 5. We will add the functionality for the button click in the code-behind.  Double-click the button to generate the event handler.
 
-	```
+	```csharp
 	private void btnMultiply_Click(object sender, EventArgs e)
 	{
 	
@@ -66,19 +66,19 @@ The steps below will create a basic Windows Forms application.  It will multiply
 
 	c. Use `*` to multiply, and `=` to assign the result to the variable.
 
-	```
+	```csharp
 	decimal result = numVariable1.Value * numVariable2.Value;
 	```
 
 	d. All that’s left is to show the result on the form.  Set the Text property of the third Label control to the result.  The result is a decimal, because the NumericUpDown controls use the decimal type by default.  When declaring the variable to hold the result, its type must match the type of the value assigned.  For more information, please see the "Detailed Explanations" section below.  Labels show the string type, so telling it to show a decimal won’t work.  Luckily there is already a converter method!
 
-	```
+	```csharp
 	lblResult.Text = result.ToString();
 	```
 	
 	The full event handler code is as follows.
 	
-	```
+	```csharp
 	private void btnMultiply_Click(object sender, EventArgs e)
 	{
 	    decimal result = numVariable1.Value * numVariable2.Value;
@@ -100,7 +100,7 @@ When you declare a variable, you need to specify its type.  We use "decimal" her
 
 To get around this, there is something called "casting", which means you change one type to another by explicitly telling the program to change the type.  You would do it by putting the desired type in parentheses ahead of the code that accesses the actual type.  This is a bit complex for the walkthrough, so we use decimal instead.
 
-```
+```csharp
 int result = (int) numVariable1.Value;
 ```
 
@@ -118,13 +118,13 @@ With this data, you can either "get" or "set" it.  "Get" means you simply read w
 
 We did both in this example.  The multiplication operation had to **get** both of the numeric values.  It **set** the value of the variable we created to hold the result.
 
-```
+```csharp
 decimal result = numVariable1.Value * numVariable2.Value
 ```
 
 Another example of **setting** a value is where we changed the text of the third Label control.
 
-```
+```csharp
 lblResult.Text = result.ToString();
 ```
 
@@ -138,7 +138,7 @@ If you would like to explore the controls and what properties they have availabl
 
 One confusing concept is that the `=` sign does not actually mean "equals" in C# and many other programming languages.  It means "is assigned the value" of whatever follows it.
 
-```
+```csharp
 int simpleMult = 3 * 3;
 ```
 

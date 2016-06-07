@@ -50,7 +50,7 @@ The steps below will create a basic Windows Forms application.  It will take a u
 
 5. We will add the functionality for the click events of both buttons in the code-behind.  Double-click the Encrypt and Decrypt buttons to generate the event handlers.  We'll leave these alone for now, but we'll need them later.
 
-	```
+	```csharp
 	private void btnEncrypt_Click(object sender, EventArgs e)
 	{
 	
@@ -70,7 +70,7 @@ The steps below will create a basic Windows Forms application.  It will take a u
 
 	To do this, we should accept 2 parameters.  One is the string to shift, and the other is the amount by which to shift each character.
 	
-	```
+	```csharp
 	private string Transform(string message, int step)
 	{
 	}
@@ -88,15 +88,15 @@ The steps below will create a basic Windows Forms application.  It will take a u
 	
 	We could use an array and have the index match the numeric value of the letter (with a being 0, b being 1, etc.).  Let’s declare that array in Form1.  This could also be declared in the Transform method, because it’s only used in that part of the program.  My example puts it above the Form1 constructor.
 	
-	```
-char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m',                                    'n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	```csharp
+char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 	```
  
 	This is a character array.  In C#, characters need to be enclosed in single quotes, and strings use double quotes.  Note how the array of the index will correspond to the number of the letter, with 'a' starting at 0 and 'z' being 25.
 	
 	d. Next, let's convert the string in the method parameter into a character array, so that we can do operations on each character individually.
 	
-	```
+	```csharp
 	private string Transform(string message, int step)
     {
         char[] newMessage = message.ToLower().ToCharArray();
@@ -107,13 +107,13 @@ char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m',
 	
 	e. Get the length of the message so we know how many times we need to try to encrypt a letter.
 	
-	```
+	```csharp
 	int length = message.Length;
 	```
  
 	f. Now that we have the length of the string, we can use a for loop to cycle through the letters in the character array, and shift each one. 
 
-	```
+	```csharp
 	for (int i = 0; i < length; i++)
     {
         char letter = newMessage[i];
@@ -133,7 +133,7 @@ char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m',
 	
 	g. Finally, we need to return a string as promised in the method declaration.
 	
-	```
+	```csharp
 	return new string(newMessage);
 	```
  
@@ -141,7 +141,7 @@ char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m',
 	
 	The full method code looks like this.
 	
-	```
+	```csharp
 	private string Transform(string message, int step)
     {
         char[] newMessage = message.ToLower().ToCharArray();
@@ -163,7 +163,7 @@ char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m',
 	
 7. Now let's get back to the two button click events.  We have to make the buttons do this transformation. Remember, we already did the hard work in creating the method.  Now let's call it with the correct parameters!
 
-	```
+	```csharp
 	private void btnEncrypt_Click(object sender, EventArgs e)
     {
         txtMessage.Text = Transform(txtMessage.Text, (int)numStep.Value);

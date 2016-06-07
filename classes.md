@@ -67,13 +67,13 @@ The steps below will create a basic Windows Forms application.  It will contain 
 
 	a. First, add the following using statement to the top of the file so we can use the Image class.
 	
-	```
+	```csharp
 	using System.Drawing;
 	```
 
 	b. Inside the class, define the properties.  These are similar to [variables](variables.md).
 	
-	```
+	```csharp
 	// define what we know about each Pokemon
 	private string name;
 	private string type;
@@ -83,7 +83,7 @@ The steps below will create a basic Windows Forms application.  It will contain 
 
 9. Next, we will create a "constructor", which is a method that allows us to create instances of the class, namely, specific Pokémon.  This code is added inside the class, below the properties we just defined.
 
-	```
+	```csharp
 	// constructor to allow us to create instances of Pokemon
     public Pokemon(string myName, string myType, int myLevel, Image myImage)
     {
@@ -100,7 +100,7 @@ The steps below will create a basic Windows Forms application.  It will contain 
 
 10.	Now we will create "getters" or "accessors", which allow us to find out the information about each Pokémon.  This is done for security reasons.  We could have made the properties public, but then anyone (and any program!) could go in there and change all of the information!  Like setting a level to 99!  This way we know it can only be read (not overwritten).  These are also [methods](methods.md). This code can be placed below the constructor code, but still inside the class.
 
-	```
+	```csharp
 	public string GetName()
     {
         return name;
@@ -142,7 +142,7 @@ The steps below will create a basic Windows Forms application.  It will contain 
 
 12. Now we get back to the ComboBox's event handler in Form1.cs.  Let's display the information for the Pokémon that was selected.
 
-	```
+	```csharp
 	private void cmbSelect_SelectedIndexChanged(object sender, EventArgs e)
     {
         // Clear the textbox
@@ -206,13 +206,13 @@ The best example here is with classes, and needing to get or set a value of a pr
 
 If you have a public property, then you can easily do something like this:
 
-```
+```csharp
 int currentLevel = myPokemon.level;
 ```
 
 However, you could just as easily do something like this:
 
-```
+```csharp
 myPokemon.level = 99;
 yourPokemon.level = 1;
 ```
@@ -223,7 +223,7 @@ The safer approach is to set the variable as private, and have 2 public methods 
 
 For example:
 
-```
+```csharp
 int currentLevel = myPokemon.getLevel();
 myPokemon.levelUp();
 ```
@@ -232,7 +232,7 @@ Instead of being able to directly access the level property on the Pokemon class
 
 The methods in the Pokemon class would look like this:
 
-```
+```csharp
 public int getLevel()
 {
     return level; // assuming level is a property defined on the class

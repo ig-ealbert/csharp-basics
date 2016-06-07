@@ -63,7 +63,7 @@ The steps below will create a basic Windows Forms application.  It will have one
 
 	As you can see, an event handler was created for you by Visual Studio.
 
-    ```
+    ```csharp
     private void button1_Click(object sender, EventArgs e)
     {
     
@@ -74,13 +74,13 @@ The steps below will create a basic Windows Forms application.  It will have one
 
 	Enter the following code into the event handler.
 
-    ```
+    ```csharp
     MessageBox.Show("Hello World!", "Message");
     ```
 
     It should look like this:
 
-    ```
+    ```csharp
     private void button1_Click(object sender, EventArgs e)
     {
         MessageBox.Show("Hello World!", "Message");

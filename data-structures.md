@@ -47,7 +47,7 @@ Before you start writing code, you need to understand the problem and how to sol
 
 6. First, we have to declare the data structures so we can use them in our program.  Add the following code above the Form constructor.
 
-	```
+	```csharp
 	int[] fibonacci = new int[10];
     int[,] multiplication = new int[9, 9];
     List<Bitmap> cats;
@@ -57,7 +57,7 @@ Before you start writing code, you need to understand the problem and how to sol
 	
 7. Add the following methods under the `InitializeComponent()` call.
 
-	```
+	```csharp
 	InitializeArray();
 	InitializeMatrix();
 	InitializeList();
@@ -67,7 +67,7 @@ Before you start writing code, you need to understand the problem and how to sol
 
 8. Let's start by writing the InitializeArray() method.  You can either right-click the method call and choose "Generate > Method Stub", or you can write out a simple method declaration.  For more information about methods, please see the [Methods](methods.md) walkthrough.
 
-	```
+	```csharp
 	private void InitializeArray()
     {
 
@@ -78,7 +78,7 @@ Before you start writing code, you need to understand the problem and how to sol
 
 	We will set the first two numbers and then use a ["for" loop](if-statements-and-for-loops.md) to set the rest of the numbers.
 	
-	```
+	```csharp
 	private void InitializeArray()
     {
         fibonacci[0] = 1;
@@ -94,7 +94,7 @@ Before you start writing code, you need to understand the problem and how to sol
 
 	We can use nested for loops to fill in the data.  Note the usage of the two indices to specify the row and the column in the matrix.
 	
-	```
+	```csharp
 	private void InitializeMatrix()
     {
         for (int row = 0; row < 9; row++)
@@ -113,7 +113,7 @@ Before you start writing code, you need to understand the problem and how to sol
 
 12. Create the InitializeList() method.  The paths are relative.  `../` means "go up one folder level".  In this case, the application runs from an .exe file in the bin/Debug folder, so we have to go up 2 levels to reach the "images" folder.
 
-	```
+	```csharp
 	private void InitializeList()
     {
         cats = new List<Bitmap>(8);
@@ -132,7 +132,7 @@ Before you start writing code, you need to understand the problem and how to sol
 	
 13. We also need to create a variable to track which image is being shown in the PictureBox.  Add it below the other variable declarations.
 
-	```
+	```csharp
 	int catIndex = 0;
 	```
 	
@@ -142,7 +142,7 @@ Before you start writing code, you need to understand the problem and how to sol
 	
 	b. Add code to display the array in the TextBox.  Clear the text, then use a "for" loop to print out the numbers in the array.
 	
-	```
+	```csharp
 	private void btnArray_Click(object sender, EventArgs e)
     {
         txtOutput.ResetText();
@@ -157,7 +157,7 @@ Before you start writing code, you need to understand the problem and how to sol
 	
 	d. Add code to display the matrix in the TextBox.  This won't layout perfectly because the double-digit numbers take up more space.
 	
-	```
+	```csharp
 	private void btnMatrix_Click(object sender, EventArgs e)
     {
         txtOutput.ResetText();
@@ -176,7 +176,7 @@ Before you start writing code, you need to understand the problem and how to sol
 
 	a. Add code for the < button.  Make sure you handle the case where you're at the beginning of the List!
 	
-	```
+	```csharp
 	private void btnLeft_Click(object sender, EventArgs e)
     {
         if (catIndex != 0)
@@ -196,7 +196,7 @@ Before you start writing code, you need to understand the problem and how to sol
  
 	b. Add code for the > button.  Make sure you handle the case where you're at the end of the List!
 	
-	```
+	```csharp
 	private void btnRight_Click(object sender, EventArgs e)
     {
         catIndex = (catIndex + 1) % 8;

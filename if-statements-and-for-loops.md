@@ -47,7 +47,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 5. We will add the functionality for the button click in the code-behind.  Double-click the button to generate the event handler.
 
-	```
+	```csharp
 	private void btnDisplay_Click(object sender, EventArgs e)
 	{
 	
@@ -58,7 +58,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 	Let's start by getting the value entered.  If you need a hint, check the [Variables](variables.md) walkthrough.  This code goes inside the button click event handler.
 	
-	```
+	```csharp
 	int value = (int) numMaximum.Value;
 	```
  
@@ -79,7 +79,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 	So let's make sure that the value entered is greater than 0.
 
-	```
+	```csharp
 	// check that the value entered is greater than 0
 	if (value > 0)
 	{
@@ -104,7 +104,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 	
 	This will make more sense with the example for the walkthrough.  This code should go inside the "if" {}, because it is what will happen if the value entered is valid.
 
-	```
+	```csharp
 	for (int count = 1; count <= value; count++)
 	{
 	txtResult.Text += count.ToString() + Environment.NewLine;
@@ -119,7 +119,7 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 9. Now we need to do something if the input is not valid, like if the user enters 0 or a negative number.  Let's just display a reminder.
 
-	```
+	```csharp
 	else
 	{
 		txtResult.Text = "Please enter a positive integer";
@@ -128,14 +128,14 @@ The steps below will create a basic Windows Forms application.  It will ask for 
 
 10.	Finally, let's clean things up a bit by clearing the text box each time "Display" is clicked.  This code should go right before the "if" statement.
 
-	```
+	```csharp
 	// clear the text box
 	txtResult.Text = "";
 	```
 
 11. For your reference, here is the full code of the button click event handler.
 
-	```
+	```csharp
 	private void btnDisplay_Click(object sender, EventArgs e)
     {
         int value = (int)numMaximum.Value;
@@ -181,7 +181,7 @@ The code will execute as long as the statement inside the parentheses is true.
 
 For example:
 
-```
+```csharp
 int times = 5;
 while (times > 0)
 {
@@ -218,7 +218,7 @@ Only when the value matches the condition will the code in that case be executed
 
 For example, let's say you have a value x that the user inputs.
 
-```
+```csharp
 switch (x)
 {
   case 1:
