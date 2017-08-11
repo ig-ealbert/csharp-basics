@@ -89,7 +89,7 @@ The steps below will create a basic Windows Forms application.  It will take a u
 	We could use an array and have the index match the numeric value of the letter (with a being 0, b being 1, etc.).  Let’s declare that array in Form1.  This could also be declared in the Transform method, because it’s only used in that part of the program.  My example puts it above the Form1 constructor.
 	
 	```csharp
-char[] letters = new char[]{'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    char[] letters = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 	```
  
 	This is a character array.  In C#, characters need to be enclosed in single quotes, and strings use double quotes.  Note how the array of the index will correspond to the number of the letter, with 'a' starting at 0 and 'z' being 25.
