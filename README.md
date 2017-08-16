@@ -12,7 +12,7 @@ This repository contains a set of walkthroughs about C# programming.  They are m
 
 3. **If Statements and For Loops** - Learn how to control program flow by conditionally executing code, and running the same commands multiple times.  Create a project that prints out all numbers from 1 to the specified number.
 
-4. **Methods** - Learn how to group code into resuable blocks.  Create a project that encrypts and decrypts a message.
+4. **Methods** - Learn how to group code into reusable blocks.  Create a project that encrypts and decrypts a message.
 
 5. **Recursion** - Learn how to simplify problems until you reach a base case.  This makes seemingly difficult problems easy to solve!  Create a project that checks if a string is a palindrome.
 
